@@ -1,15 +1,21 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>VyprDark | Streamer</title>
+    <title>VyprDark | Official Website</title>
 
-    <meta name="description" content="Official website for VyprDark. Follow VyprDark on Twitch, TikTok, X, and Discord.">
+    <meta
+        name="description"
+        content="The official VyprDark website. Follow VyprDark on Twitch, TikTok, X, and Discord."
+    >
 
     <style>
+        /* ================================
+           RESET
+        ================================= */
+
         * {
             margin: 0;
             padding: 0;
@@ -23,329 +29,523 @@
         body {
             font-family: Arial, Helvetica, sans-serif;
             background: #08080d;
-            color: white;
+            color: #ffffff;
             min-height: 100vh;
             overflow-x: hidden;
         }
 
-        /* Background */
+        /* ================================
+           BACKGROUND
+        ================================= */
+
         body::before {
             content: "";
             position: fixed;
             inset: 0;
             z-index: -2;
+
             background:
-                radial-gradient(circle at 50% 0%, rgba(145, 0, 255, 0.20), transparent 35%),
-                radial-gradient(circle at 0% 100%, rgba(75, 0, 150, 0.15), transparent 30%),
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(145, 70, 255, 0.25),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at 0% 100%,
+                    rgba(80, 0, 180, 0.15),
+                    transparent 30%
+                ),
                 #08080d;
         }
 
-        /* Navigation */
+        /* ================================
+           NAVIGATION
+        ================================= */
+
         nav {
-            width: 100%;
-            padding: 20px 6%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             position: fixed;
             top: 0;
             left: 0;
+
+            width: 100%;
+
+            padding: 18px 6%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
             z-index: 100;
-            background: rgba(8, 8, 13, 0.75);
+
+            background: rgba(8, 8, 13, 0.78);
+
             backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            -webkit-backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
         }
 
-        .nav-logo {
-            font-size: 22px;
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-brand img {
+            width: 42px;
+            height: 42px;
+
+            object-fit: contain;
+
+            border-radius: 10px;
+        }
+
+        .nav-brand span {
+            font-size: 20px;
             font-weight: 800;
             letter-spacing: 1px;
         }
 
-        .nav-logo span {
-            color: #a855f7;
-        }
-
         .nav-links {
             display: flex;
+            align-items: center;
             gap: 28px;
         }
 
         .nav-links a {
-            color: #bbb;
+            color: #aaaaaa;
+
             text-decoration: none;
+
             font-size: 14px;
             font-weight: 600;
-            transition: 0.2s;
+
+            transition: 0.2s ease;
         }
 
         .nav-links a:hover {
-            color: white;
+            color: #ffffff;
         }
 
-        /* Hero */
+        /* ================================
+           HERO
+        ================================= */
+
         .hero {
             min-height: 100vh;
+
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+
             text-align: center;
-            padding: 120px 20px 80px;
+
+            padding: 140px 20px 80px;
         }
 
         .hero-content {
+            width: 100%;
             max-width: 850px;
         }
 
-        .profile {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            margin: 0 auto 25px;
-            background: linear-gradient(135deg, #a855f7, #5b21b6);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 42px;
-            font-weight: 900;
-            box-shadow: 0 0 60px rgba(168, 85, 247, 0.35);
+        .profile-logo {
+            width: 150px;
+            height: 150px;
+
+            object-fit: cover;
+
+            border-radius: 30px;
+
+            margin-bottom: 28px;
+
+            box-shadow:
+                0 0 45px rgba(145, 70, 255, 0.35),
+                0 20px 50px rgba(0, 0, 0, 0.45);
+
+            transition: transform 0.3s ease;
         }
 
-        .live-status {
+        .profile-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .status {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 8px 14px;
+
+            padding: 8px 15px;
+
             border-radius: 50px;
-            background: rgba(255, 255, 255, 0.06);
+
+            background: rgba(255, 255, 255, 0.05);
+
             border: 1px solid rgba(255, 255, 255, 0.08);
+
+            color: #bbbbbb;
+
             font-size: 13px;
-            color: #ccc;
+
             margin-bottom: 20px;
         }
 
-        .live-dot {
+        .status-dot {
             width: 8px;
             height: 8px;
-            background: #777;
+
+            background: #777777;
+
             border-radius: 50%;
         }
 
         .hero h1 {
-            font-size: clamp(50px, 10vw, 100px);
+            font-size: clamp(55px, 10vw, 105px);
+
             font-weight: 900;
+
             letter-spacing: -5px;
+
             line-height: 0.95;
-            margin-bottom: 20px;
+
+            margin-bottom: 25px;
         }
 
         .hero h1 span {
-            background: linear-gradient(90deg, #ffffff, #a855f7);
+            background: linear-gradient(
+                90deg,
+                #ffffff,
+                #b55cff
+            );
+
             -webkit-background-clip: text;
+            background-clip: text;
+
             -webkit-text-fill-color: transparent;
         }
 
         .hero p {
-            max-width: 600px;
-            margin: auto;
-            color: #aaa;
+            max-width: 620px;
+
+            margin: 0 auto;
+
+            color: #999999;
+
             font-size: 18px;
+
             line-height: 1.7;
         }
 
-        /* Buttons */
+        /* ================================
+           BUTTONS
+        ================================= */
+
         .hero-buttons {
             margin-top: 35px;
+
             display: flex;
+            align-items: center;
             justify-content: center;
+
             flex-wrap: wrap;
+
             gap: 14px;
         }
 
         .button {
             display: inline-flex;
-            justify-content: center;
+
             align-items: center;
-            padding: 14px 25px;
-            border-radius: 10px;
+            justify-content: center;
+
+            min-height: 50px;
+
+            padding: 14px 26px;
+
+            border-radius: 11px;
+
             text-decoration: none;
+
             font-weight: 700;
-            transition: 0.25s;
+
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease,
+                box-shadow 0.25s ease;
         }
 
-        .button-primary {
-            color: white;
+        .primary {
+            color: #ffffff;
+
             background: #9146ff;
-            box-shadow: 0 10px 30px rgba(145, 70, 255, 0.25);
+
+            box-shadow:
+                0 10px 30px rgba(145, 70, 255, 0.25);
         }
 
-        .button-primary:hover {
+        .primary:hover {
             transform: translateY(-3px);
-            background: #a45cff;
+
+            background: #a55cff;
+
+            box-shadow:
+                0 15px 35px rgba(145, 70, 255, 0.35);
         }
 
-        .button-secondary {
-            color: white;
+        .secondary {
+            color: #ffffff;
+
             background: rgba(255, 255, 255, 0.06);
+
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .button-secondary:hover {
+        .secondary:hover {
             transform: translateY(-3px);
-            background: rgba(255, 255, 255, 0.1);
+
+            background: rgba(255, 255, 255, 0.11);
         }
 
-        /* Sections */
+        /* ================================
+           SECTIONS
+        ================================= */
+
         section {
             padding: 100px 6%;
         }
 
-        .section-container {
+        .container {
+            width: 100%;
             max-width: 1100px;
-            margin: auto;
+
+            margin: 0 auto;
         }
 
         .section-title {
             text-align: center;
+
             margin-bottom: 50px;
         }
 
         .section-title h2 {
             font-size: 42px;
+
             margin-bottom: 12px;
         }
 
         .section-title p {
-            color: #888;
+            color: #888888;
+
+            font-size: 15px;
         }
 
-        /* Social cards */
+        /* ================================
+           SOCIAL CARDS
+        ================================= */
+
         .social-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+
+            grid-template-columns:
+                repeat(4, minmax(0, 1fr));
+
             gap: 18px;
         }
 
         .social-card {
-            text-decoration: none;
-            color: white;
+            position: relative;
+
             padding: 30px 20px;
-            border-radius: 18px;
+
+            border-radius: 20px;
+
             text-align: center;
+
+            color: #ffffff;
+
+            text-decoration: none;
+
             background: rgba(255, 255, 255, 0.035);
+
             border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: 0.25s;
+
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease,
+                border-color 0.25s ease;
         }
 
         .social-card:hover {
-            transform: translateY(-7px);
-            border-color: rgba(168, 85, 247, 0.5);
+            transform: translateY(-8px);
+
             background: rgba(168, 85, 247, 0.08);
+
+            border-color: rgba(168, 85, 247, 0.45);
         }
 
-        .social-icon {
-            width: 55px;
-            height: 55px;
-            margin: 0 auto 18px;
-            border-radius: 15px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.07);
-            font-size: 23px;
-            font-weight: 900;
+        .social-logo {
+            width: 90px;
+            height: 90px;
+
+            object-fit: contain;
+
+            margin: 0 auto 20px;
+
+            border-radius: 14px;
+
+            transition: transform 0.25s ease;
+        }
+
+        .social-card:hover .social-logo {
+            transform: scale(1.08);
         }
 
         .social-card h3 {
+            font-size: 19px;
+
             margin-bottom: 7px;
         }
 
         .social-card p {
-            color: #888;
+            color: #888888;
+
             font-size: 13px;
         }
 
-        /* Twitch section */
+        /* ================================
+           TWITCH FEATURE
+        ================================= */
+
         .twitch-box {
-            background: linear-gradient(
-                135deg,
-                rgba(145, 70, 255, 0.14),
-                rgba(255, 255, 255, 0.025)
-            );
-            border: 1px solid rgba(145, 70, 255, 0.2);
-            border-radius: 25px;
-            padding: 50px;
+            position: relative;
+
+            overflow: hidden;
+
+            padding: 60px 30px;
+
             text-align: center;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(145, 70, 255, 0.15),
+                    rgba(255, 255, 255, 0.025)
+                );
+
+            border: 1px solid rgba(145, 70, 255, 0.25);
+        }
+
+        .twitch-logo {
+            width: 90px;
+            height: 75px;
+
+            object-fit: contain;
+
+            margin-bottom: 20px;
         }
 
         .twitch-box h2 {
-            font-size: 36px;
+            font-size: 38px;
+
             margin-bottom: 15px;
         }
 
         .twitch-box p {
-            color: #999;
+            color: #999999;
+
             margin-bottom: 28px;
         }
 
-        /* About */
+        /* ================================
+           ABOUT
+        ================================= */
+
         .about {
             max-width: 750px;
-            margin: auto;
+
+            margin: 0 auto;
+
             text-align: center;
         }
 
         .about p {
-            color: #aaa;
+            color: #aaaaaa;
+
             font-size: 17px;
+
             line-height: 1.8;
         }
 
-        /* Footer */
+        /* ================================
+           FOOTER
+        ================================= */
+
         footer {
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
             padding: 30px 20px;
+
             text-align: center;
-            color: #666;
+
+            color: #666666;
+
             font-size: 13px;
+
+            border-top:
+                1px solid rgba(255, 255, 255, 0.06);
         }
 
         footer strong {
-            color: #aaa;
+            color: #aaaaaa;
         }
 
-        /* Mobile */
-        @media (max-width: 800px) {
-            .nav-links {
-                display: none;
-            }
+        /* ================================
+           TABLET
+        ================================= */
 
-            .hero h1 {
-                letter-spacing: -3px;
-            }
+        @media (max-width: 900px) {
 
             .social-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
             }
 
-            .twitch-box {
-                padding: 35px 20px;
+            .nav-links {
+                gap: 18px;
             }
         }
 
-        @media (max-width: 500px) {
+        /* ================================
+           MOBILE
+        ================================= */
+
+        @media (max-width: 600px) {
+
             nav {
                 justify-content: center;
+            }
+
+            .nav-links {
+                display: none;
             }
 
             .hero {
                 padding-top: 130px;
             }
 
-            .profile {
-                width: 105px;
-                height: 105px;
-                font-size: 34px;
+            .profile-logo {
+                width: 120px;
+                height: 120px;
+
+                border-radius: 24px;
+            }
+
+            .hero h1 {
+                font-size: 58px;
+
+                letter-spacing: -3px;
             }
 
             .hero p {
@@ -354,6 +554,7 @@
 
             .hero-buttons {
                 flex-direction: column;
+
                 width: 100%;
             }
 
@@ -373,8 +574,46 @@
                 grid-template-columns: 1fr;
             }
 
+            .social-card {
+                padding: 25px;
+            }
+
+            .social-logo {
+                width: 80px;
+                height: 80px;
+            }
+
+            .twitch-box {
+                padding: 45px 20px;
+            }
+
             .twitch-box h2 {
-                font-size: 29px;
+                font-size: 30px;
+            }
+
+            .twitch-logo {
+                width: 80px;
+                height: 70px;
+            }
+        }
+
+        /* ================================
+           SMALL PHONES
+        ================================= */
+
+        @media (max-width: 380px) {
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .profile-logo {
+                width: 105px;
+                height: 105px;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
             }
         }
     </style>
@@ -382,129 +621,98 @@
 
 <body>
 
-    <!-- Navigation -->
+    <!-- =================================
+         NAVIGATION
+    ================================== -->
+
     <nav>
-        <div class="nav-logo">
-            VYPR<span>DARK</span>
-        </div>
+
+        <a
+            class="nav-brand"
+            href="#home"
+        >
+
+            <img
+                src="Vyprdark Logo.png"
+                alt="VyprDark Logo"
+            >
+
+            <span>
+                VyprDark
+            </span>
+
+        </a>
 
         <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#socials">Socials</a>
-            <a href="#about">About</a>
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#socials">
+                Socials
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
         </div>
+
     </nav>
 
 
-    <!-- Hero -->
-    <main id="home">
-        <section class="hero">
-            <div class="hero-content">
+    <!-- =================================
+         HERO
+    ================================== -->
 
-                <div class="profile">
-                    VD
-                </div>
+    <section
+        class="hero"
+        id="home"
+    >
 
-                <div class="live-status">
-                    <span class="live-dot"></span>
-                    Streamer
-                </div>
+        <div class="hero-content">
 
-                <h1>
-                    <span>VyprDark</span>
-                </h1>
+            <img
+                class="profile-logo"
+                src="Vyprdark Logo.png"
+                alt="VyprDark"
+            >
 
-                <p>
-                    Welcome to the official VyprDark website.
-                    Follow along for streams, videos, updates, and more.
-                </p>
+            <div class="status">
 
-                <div class="hero-buttons">
+                <span class="status-dot"></span>
 
-                    <a
-                        class="button button-primary"
-                        href="https://www.twitch.tv/vyprdark"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Watch on Twitch
-                    </a>
-
-                    <a
-                        class="button button-secondary"
-                        href="#socials"
-                    >
-                        Follow Me
-                    </a>
-
-                </div>
+                Streamer & Content Creator
 
             </div>
-        </section>
-    </main>
 
+            <h1>
+                <span>VyprDark</span>
+            </h1>
 
-    <!-- Socials -->
-    <section id="socials">
+            <p>
+                Welcome to the official VyprDark website.
+                Watch streams, join the community, and follow
+                VyprDark across social media.
+            </p>
 
-        <div class="section-container">
+            <div class="hero-buttons">
 
-            <div class="section-title">
-                <h2>Find Me Online</h2>
-                <p>Follow VyprDark across all platforms.</p>
-            </div>
-
-            <div class="social-grid">
-
-                <!-- Discord -->
                 <a
-                    class="social-card"
-                    href="https://discord.gg/EJaegK9Xba"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <div class="social-icon">D</div>
-                    <h3>Discord</h3>
-                    <p>Join the community</p>
-                </a>
-
-
-                <!-- Twitch -->
-                <a
-                    class="social-card"
+                    class="button primary"
                     href="https://www.twitch.tv/vyprdark"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    <div class="social-icon">T</div>
-                    <h3>Twitch</h3>
-                    <p>Watch the streams</p>
+                    Watch on Twitch
                 </a>
 
-
-                <!-- TikTok -->
                 <a
-                    class="social-card"
-                    href="https://www.tiktok.com/@twitchvyprdark7"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    class="button secondary"
+                    href="#socials"
                 >
-                    <div class="social-icon">TT</div>
-                    <h3>TikTok</h3>
-                    <p>Watch short videos</p>
-                </a>
-
-
-                <!-- X -->
-                <a
-                    class="social-card"
-                    href="https://x.com/VyprDark"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <div class="social-icon">X</div>
-                    <h3>X</h3>
-                    <p>Follow for updates</p>
+                    Find Me Online
                 </a>
 
             </div>
@@ -514,21 +722,166 @@
     </section>
 
 
-    <!-- Twitch -->
+    <!-- =================================
+         SOCIALS
+    ================================== -->
+
+    <section id="socials">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    Find Me Online
+                </h2>
+
+                <p>
+                    Follow VyprDark across all platforms.
+                </p>
+
+            </div>
+
+
+            <div class="social-grid">
+
+                <!-- DISCORD -->
+
+                <a
+                    class="social-card"
+                    href="https://discord.gg/EJaegK9Xba"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <img
+                        class="social-logo"
+                        src="Discord Logo.png"
+                        alt="Discord Logo"
+                    >
+
+                    <h3>
+                        Discord
+                    </h3>
+
+                    <p>
+                        Join the community
+                    </p>
+
+                </a>
+
+
+                <!-- TWITCH -->
+
+                <a
+                    class="social-card"
+                    href="https://www.twitch.tv/vyprdark"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <img
+                        class="social-logo"
+                        src="Twitch Logo.png"
+                        alt="Twitch Logo"
+                    >
+
+                    <h3>
+                        Twitch
+                    </h3>
+
+                    <p>
+                        Watch the streams
+                    </p>
+
+                </a>
+
+
+                <!-- TIKTOK -->
+
+                <a
+                    class="social-card"
+                    href="https://www.tiktok.com/@twitchvyprdark7"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <img
+                        class="social-logo"
+                        src="Tiktok Logo.png"
+                        alt="TikTok Logo"
+                    >
+
+                    <h3>
+                        TikTok
+                    </h3>
+
+                    <p>
+                        Watch short videos
+                    </p>
+
+                </a>
+
+
+                <!-- X -->
+
+                <a
+                    class="social-card"
+                    href="https://x.com/VyprDark"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <img
+                        class="social-logo"
+                        src="X logo.png"
+                        alt="X Logo"
+                    >
+
+                    <h3>
+                        X
+                    </h3>
+
+                    <p>
+                        Follow for updates
+                    </p>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================
+         TWITCH FEATURE
+    ================================== -->
+
     <section>
 
-        <div class="section-container">
+        <div class="container">
 
             <div class="twitch-box">
 
-                <h2>Watch VyprDark Live</h2>
+                <img
+                    class="twitch-logo"
+                    src="Twitch Logo.png"
+                    alt="Twitch Logo"
+                >
+
+                <h2>
+                    Watch VyprDark Live
+                </h2>
 
                 <p>
-                    Catch the latest streams and hang out with the community.
+                    Catch the latest streams and hang out
+                    with the community.
                 </p>
 
                 <a
-                    class="button button-primary"
+                    class="button primary"
                     href="https://www.twitch.tv/vyprdark"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -543,19 +896,26 @@
     </section>
 
 
-    <!-- About -->
+    <!-- =================================
+         ABOUT
+    ================================== -->
+
     <section id="about">
 
-        <div class="section-container">
+        <div class="container">
 
             <div class="section-title">
-                <h2>About VyprDark</h2>
+
+                <h2>
+                    About VyprDark
+                </h2>
+
             </div>
 
             <div class="about">
 
                 <p>
-                    VyprDark is a content creator and streamer.
+                    VyprDark is a streamer and content creator.
                     Follow the social links above to stay connected,
                     watch streams, and join the community.
                 </p>
@@ -567,14 +927,19 @@
     </section>
 
 
-    <!-- Footer -->
-    <footer>
-        <p>
-            © 2026 <strong>VyprDark</strong>. All rights reserved.
-        </p>
-    </footer>
+    <!-- =================================
+         FOOTER
+    ================================== -->
 
+    <footer>
+
+        <p>
+            © 2026
+            <strong>VyprDark</strong>.
+            All rights reserved.
+        </p>
+
+    </footer>
 
 </body>
 </html>
-```
