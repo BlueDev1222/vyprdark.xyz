@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <!-- =========================
@@ -22,7 +23,7 @@
 
 
     <!-- =========================
-         VYPRDARK BROWSER ICON
+         BROWSER TAB ICON
     ========================== -->
 
     <link
@@ -44,6 +45,10 @@
 
     <style>
 
+        /* =========================
+           RESET
+        ========================== */
+
         * {
             margin: 0;
             padding: 0;
@@ -59,7 +64,7 @@
 
             background: #08080d;
 
-            color: white;
+            color: #ffffff;
 
             min-height: 100vh;
 
@@ -96,11 +101,10 @@
 
 
         /* =========================
-           NAVBAR
+           NAVIGATION
         ========================== */
 
         nav {
-
             position: fixed;
 
             top: 0;
@@ -120,9 +124,12 @@
 
             z-index: 100;
 
-            background: rgba(8, 8, 13, 0.80);
+            background:
+                rgba(8, 8, 13, 0.80);
 
             backdrop-filter: blur(15px);
+
+            -webkit-backdrop-filter: blur(15px);
 
             border-bottom:
                 1px solid rgba(255, 255, 255, 0.07);
@@ -130,22 +137,21 @@
 
 
         .nav-brand {
-
             display: flex;
 
             align-items: center;
 
             gap: 12px;
 
-            color: white;
+            color: #ffffff;
 
             text-decoration: none;
         }
 
 
         .nav-brand img {
-
             width: 42px;
+
             height: 42px;
 
             object-fit: contain;
@@ -155,7 +161,6 @@
 
 
         .nav-brand span {
-
             font-size: 21px;
 
             font-weight: 800;
@@ -165,7 +170,6 @@
 
 
         .nav-links {
-
             display: flex;
 
             gap: 30px;
@@ -173,8 +177,7 @@
 
 
         .nav-links a {
-
-            color: #aaa;
+            color: #aaaaaa;
 
             text-decoration: none;
 
@@ -182,13 +185,12 @@
 
             font-weight: 600;
 
-            transition: 0.2s;
+            transition: 0.2s ease;
         }
 
 
         .nav-links a:hover {
-
-            color: white;
+            color: #ffffff;
         }
 
 
@@ -197,7 +199,6 @@
         ========================== */
 
         .hero {
-
             min-height: 100vh;
 
             display: flex;
@@ -213,7 +214,6 @@
 
 
         .hero-content {
-
             width: 100%;
 
             max-width: 850px;
@@ -221,7 +221,6 @@
 
 
         .profile-logo {
-
             width: 155px;
 
             height: 155px;
@@ -233,21 +232,23 @@
             margin-bottom: 30px;
 
             box-shadow:
-                0 0 50px rgba(145, 70, 255, 0.35),
-                0 20px 50px rgba(0, 0, 0, 0.45);
+                0 0 50px
+                rgba(145, 70, 255, 0.35),
 
-            transition: 0.3s;
+                0 20px 50px
+                rgba(0, 0, 0, 0.45);
+
+            transition:
+                transform 0.3s ease;
         }
 
 
         .profile-logo:hover {
-
             transform: scale(1.05);
         }
 
 
         .status {
-
             display: inline-flex;
 
             align-items: center;
@@ -262,9 +263,10 @@
                 rgba(255, 255, 255, 0.05);
 
             border:
-                1px solid rgba(255, 255, 255, 0.08);
+                1px solid
+                rgba(255, 255, 255, 0.08);
 
-            color: #bbb;
+            color: #bbbbbb;
 
             font-size: 13px;
 
@@ -273,19 +275,17 @@
 
 
         .status-dot {
-
             width: 8px;
 
             height: 8px;
 
-            background: #777;
+            background: #777777;
 
             border-radius: 50%;
         }
 
 
         .hero h1 {
-
             font-size:
                 clamp(55px, 10vw, 105px);
 
@@ -300,7 +300,6 @@
 
 
         .hero h1 span {
-
             background:
                 linear-gradient(
                     90deg,
@@ -317,12 +316,11 @@
 
 
         .hero p {
-
             max-width: 620px;
 
-            margin: auto;
+            margin: 0 auto;
 
-            color: #999;
+            color: #999999;
 
             font-size: 18px;
 
@@ -335,10 +333,11 @@
         ========================== */
 
         .hero-buttons {
-
             margin-top: 35px;
 
             display: flex;
+
+            align-items: center;
 
             justify-content: center;
 
@@ -349,7 +348,6 @@
 
 
         .button {
-
             display: inline-flex;
 
             align-items: center;
@@ -366,13 +364,15 @@
 
             font-weight: 700;
 
-            transition: 0.25s;
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease,
+                box-shadow 0.25s ease;
         }
 
 
         .primary {
-
-            color: white;
+            color: #ffffff;
 
             background: #9146ff;
 
@@ -383,7 +383,6 @@
 
 
         .primary:hover {
-
             transform: translateY(-3px);
 
             background: #a55cff;
@@ -395,19 +394,18 @@
 
 
         .secondary {
-
-            color: white;
+            color: #ffffff;
 
             background:
                 rgba(255, 255, 255, 0.06);
 
             border:
-                1px solid rgba(255, 255, 255, 0.1);
+                1px solid
+                rgba(255, 255, 255, 0.1);
         }
 
 
         .secondary:hover {
-
             transform: translateY(-3px);
 
             background:
@@ -420,23 +418,20 @@
         ========================== */
 
         section {
-
             padding: 100px 6%;
         }
 
 
         .container {
-
             width: 100%;
 
             max-width: 1100px;
 
-            margin: auto;
+            margin: 0 auto;
         }
 
 
         .section-title {
-
             text-align: center;
 
             margin-bottom: 50px;
@@ -444,7 +439,6 @@
 
 
         .section-title h2 {
-
             font-size: 42px;
 
             margin-bottom: 12px;
@@ -452,8 +446,7 @@
 
 
         .section-title p {
-
-            color: #888;
+            color: #888888;
         }
 
 
@@ -462,25 +455,23 @@
         ========================== */
 
         .social-grid {
-
             display: grid;
 
             grid-template-columns:
-                repeat(4, 1fr);
+                repeat(4, minmax(0, 1fr));
 
             gap: 18px;
         }
 
 
         .social-card {
-
             padding: 30px 20px;
 
             border-radius: 20px;
 
             text-align: center;
 
-            color: white;
+            color: #ffffff;
 
             text-decoration: none;
 
@@ -488,14 +479,17 @@
                 rgba(255, 255, 255, 0.035);
 
             border:
-                1px solid rgba(255, 255, 255, 0.08);
+                1px solid
+                rgba(255, 255, 255, 0.08);
 
-            transition: 0.25s;
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease,
+                border-color 0.25s ease;
         }
 
 
         .social-card:hover {
-
             transform: translateY(-8px);
 
             background:
@@ -507,7 +501,6 @@
 
 
         .social-logo {
-
             width: 90px;
 
             height: 90px;
@@ -518,18 +511,17 @@
 
             border-radius: 14px;
 
-            transition: 0.25s;
+            transition:
+                transform 0.25s ease;
         }
 
 
         .social-card:hover .social-logo {
-
             transform: scale(1.08);
         }
 
 
         .social-card h3 {
-
             font-size: 19px;
 
             margin-bottom: 7px;
@@ -537,19 +529,17 @@
 
 
         .social-card p {
-
-            color: #888;
+            color: #888888;
 
             font-size: 13px;
         }
 
 
         /* =========================
-           TWITCH SECTION
+           TWITCH FEATURE
         ========================== */
 
         .twitch-box {
-
             padding: 60px 30px;
 
             text-align: center;
@@ -564,12 +554,12 @@
                 );
 
             border:
-                1px solid rgba(145, 70, 255, 0.25);
+                1px solid
+                rgba(145, 70, 255, 0.25);
         }
 
 
         .twitch-logo {
-
             width: 90px;
 
             height: 75px;
@@ -581,7 +571,6 @@
 
 
         .twitch-box h2 {
-
             font-size: 38px;
 
             margin-bottom: 15px;
@@ -589,8 +578,7 @@
 
 
         .twitch-box p {
-
-            color: #999;
+            color: #999999;
 
             margin-bottom: 28px;
         }
@@ -601,7 +589,6 @@
         ========================== */
 
         .about {
-
             max-width: 750px;
 
             margin: auto;
@@ -611,8 +598,7 @@
 
 
         .about p {
-
-            color: #aaa;
+            color: #aaaaaa;
 
             font-size: 17px;
 
@@ -625,23 +611,51 @@
         ========================== */
 
         footer {
-
             padding: 30px 20px;
 
             text-align: center;
 
-            color: #666;
+            color: #666666;
 
             font-size: 13px;
 
             border-top:
-                1px solid rgba(255, 255, 255, 0.06);
+                1px solid
+                rgba(255, 255, 255, 0.06);
         }
 
 
         footer strong {
+            color: #aaaaaa;
+        }
 
-            color: #aaa;
+
+        /* DEVXON LINK */
+
+        footer a {
+            color: #a855f7;
+
+            text-decoration: none;
+
+            transition:
+                color 0.2s ease;
+        }
+
+
+        footer a:hover {
+            color: #c084fc;
+
+            text-decoration: underline;
+        }
+
+
+        /* FOOTER DIVIDER */
+
+        .footer-divider {
+            color: #444444;
+
+            margin:
+                0 8px;
         }
 
 
@@ -652,10 +666,10 @@
         @media (max-width: 900px) {
 
             .social-grid {
-
                 grid-template-columns:
-                    repeat(2, 1fr);
+                    repeat(2, minmax(0, 1fr));
             }
+
         }
 
 
@@ -666,19 +680,16 @@
         @media (max-width: 600px) {
 
             nav {
-
                 justify-content: center;
             }
 
 
             .nav-links {
-
                 display: none;
             }
 
 
             .profile-logo {
-
                 width: 120px;
 
                 height: 120px;
@@ -688,7 +699,6 @@
 
 
             .hero h1 {
-
                 font-size: 58px;
 
                 letter-spacing: -3px;
@@ -696,13 +706,11 @@
 
 
             .hero p {
-
                 font-size: 16px;
             }
 
 
             .hero-buttons {
-
                 flex-direction: column;
 
                 width: 100%;
@@ -710,31 +718,26 @@
 
 
             .button {
-
                 width: 100%;
             }
 
 
             section {
-
                 padding: 75px 20px;
             }
 
 
             .section-title h2 {
-
                 font-size: 34px;
             }
 
 
             .social-grid {
-
                 grid-template-columns: 1fr;
             }
 
 
             .social-logo {
-
                 width: 80px;
 
                 height: 80px;
@@ -742,15 +745,50 @@
 
 
             .twitch-box {
-
                 padding: 45px 20px;
             }
 
 
             .twitch-box h2 {
-
                 font-size: 30px;
             }
+
+
+            footer {
+                line-height: 2;
+            }
+
+
+            .footer-divider {
+                margin:
+                    0 5px;
+            }
+
+        }
+
+
+        /* =========================
+           SMALL PHONES
+        ========================== */
+
+        @media (max-width: 380px) {
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+
+            .profile-logo {
+                width: 105px;
+
+                height: 105px;
+            }
+
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
         }
 
     </style>
@@ -761,9 +799,9 @@
 <body>
 
 
-    <!-- =========================
+    <!-- =================================
          NAVIGATION
-    ========================== -->
+    ================================== -->
 
     <nav>
 
@@ -803,9 +841,9 @@
     </nav>
 
 
-    <!-- =========================
+    <!-- =================================
          HERO
-    ========================== -->
+    ================================== -->
 
     <section
         class="hero"
@@ -882,9 +920,9 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =================================
          SOCIALS
-    ========================== -->
+    ================================== -->
 
     <section id="socials">
 
@@ -907,7 +945,9 @@
             <div class="social-grid">
 
 
-                <!-- DISCORD -->
+                <!-- =====================
+                     DISCORD
+                ====================== -->
 
                 <a
                     class="social-card"
@@ -933,7 +973,9 @@
                 </a>
 
 
-                <!-- TWITCH -->
+                <!-- =====================
+                     TWITCH
+                ====================== -->
 
                 <a
                     class="social-card"
@@ -959,7 +1001,9 @@
                 </a>
 
 
-                <!-- TIKTOK -->
+                <!-- =====================
+                     TIKTOK
+                ====================== -->
 
                 <a
                     class="social-card"
@@ -985,7 +1029,9 @@
                 </a>
 
 
-                <!-- X -->
+                <!-- =====================
+                     X
+                ====================== -->
 
                 <a
                     class="social-card"
@@ -1018,9 +1064,9 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =================================
          TWITCH FEATURE
-    ========================== -->
+    ================================== -->
 
     <section>
 
@@ -1066,9 +1112,9 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =================================
          ABOUT
-    ========================== -->
+    ================================== -->
 
     <section id="about">
 
@@ -1102,9 +1148,9 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =================================
          FOOTER
-    ========================== -->
+    ================================== -->
 
     <footer>
 
@@ -1114,10 +1160,25 @@
             <strong>VyprDark</strong>.
             All rights reserved.
 
+            <span class="footer-divider">
+                |
+            </span>
+
+            Made By:
+
+            <a
+                href="https://x.com/DevXon5"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <strong>DEVXON</strong>
+            </a>
+
         </p>
 
     </footer>
 
 
 </body>
+
 </html>
