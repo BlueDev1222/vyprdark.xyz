@@ -195,6 +195,131 @@
 
 
         /* =========================
+           SHOP ANNOUNCEMENT BANNER
+        ========================== */
+
+        .shop-banner {
+            width: calc(100% - 40px);
+
+            max-width: 1100px;
+
+            margin: 100px auto 0;
+
+            padding: 28px 32px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 30px;
+
+            border-radius: 18px;
+
+            background:
+                linear-gradient(
+                    105deg,
+                    #f5dc4f 0%,
+                    #d7d77d 45%,
+                    #8bcfc5 100%
+                );
+
+            border:
+                1px solid rgba(255, 255, 255, 0.35);
+
+            color: #101016;
+
+            box-shadow:
+                0 15px 45px rgba(0, 0, 0, 0.25);
+        }
+
+
+        .shop-banner-content {
+            flex: 1;
+        }
+
+
+        .shop-banner-label {
+            font-size: 14px;
+
+            font-weight: 800;
+
+            margin-bottom: 10px;
+
+            color: #34343a;
+        }
+
+
+        .shop-banner h2 {
+            font-size: 34px;
+
+            line-height: 1.05;
+
+            font-weight: 900;
+
+            margin-bottom: 10px;
+
+            letter-spacing: -1px;
+        }
+
+
+        .shop-banner p {
+            max-width: 650px;
+
+            font-size: 15px;
+
+            line-height: 1.6;
+
+            font-weight: 600;
+
+            color: #36363b;
+        }
+
+
+        .shop-banner-button {
+            flex-shrink: 0;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 14px 24px;
+
+            min-width: 140px;
+
+            border-radius: 10px;
+
+            background: #111118;
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 800;
+
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+
+        .shop-banner-button:hover {
+            transform: translateY(-3px);
+
+            background: #9146ff;
+
+            box-shadow:
+                0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+
+        /* =========================
            HERO
         ========================== */
 
@@ -689,6 +814,38 @@
             }
 
 
+            /* SHOP BANNER */
+
+            .shop-banner {
+                width: calc(100% - 30px);
+
+                margin-top: 90px;
+
+                padding: 24px 22px;
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 20px;
+            }
+
+
+            .shop-banner h2 {
+                font-size: 28px;
+            }
+
+
+            .shop-banner p {
+                font-size: 14px;
+            }
+
+
+            .shop-banner-button {
+                width: 100%;
+            }
+
+
             .profile-logo {
                 width: 120px;
 
@@ -839,6 +996,43 @@
         </div>
 
     </nav>
+
+
+    <!-- =================================
+         SHOP ANNOUNCEMENT
+    ================================== -->
+
+    <div class="shop-banner">
+
+        <div class="shop-banner-content">
+
+            <div class="shop-banner-label">
+                NOW AVAILABLE
+            </div>
+
+            <h2>
+                The VyprDark Shop is Here
+            </h2>
+
+            <p>
+                Official VyprDark merchandise is now available.
+                Grab your merch and support the channel through
+                the official VyprDark shop.
+            </p>
+
+        </div>
+
+
+        <a
+            class="shop-banner-button"
+            href="https://vyprdark.printful.me"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Visit Shop
+        </a>
+
+    </div>
 
 
     <!-- =================================
